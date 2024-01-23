@@ -1,1 +1,15 @@
-# Group-Project-3
+# Project_3_Group_3
+This project is part of the edX Data Visualization Bootcamp affiliated with Case Western Reserve University.
+
+Group Members in this project are Steven Anthony, Kaleb Decker, Maddie Haughton, Em Needles, and Dena Wetmore.
+
+As a group, we chose to pursue the data engineering track of project 3. This track entails using ETL workflows on a dataset of at least 100 records and then storing it in a database.  We decided to create a database with information on places to visit in U.S. cities, and we chose to use a SQL database with Postgres because of its potential flexibility. Not only can a person gather detailed information catered specifically to them in one place, they can also store it so that people with similar interests can easily access the information.
+
+Reflecting on ethics concerns in relation to accessing individual data, we circumvented some of those challenges by using publicly accessible data from Geoapify.  This data does not concern any individuals and therefore contains no sensitive personal information.  Looking further into the issue of ethics, we decided to also ensure that this tool is accessible to individuals with disabilities or who require dietary accomodations by including those categories within the search parameters of our project.
+
+We started by cleaning and analyzing data from the Geoapify places API (https://www.geoapify.com/places-api), and then created a prewritten list of US cities to choose from, and an option for the user to input US city coordinates in the python script to get information on places to visit in a city of their choice. Our main python script for this project is the Jupyter Notebook file project3.ipynb within the Python Scripts folder. To use this project, you can run the python script and choose which city you would like to visit. Once that input is complete, the script will output two csv files based on pandas dataframes created within the script.
+
+Once we cleaned our data and put it into dataframes, we used the polars python library to export the csv files. These files are named Addresses.csv and Categories.csv, and they can be found in the CSV Files folder. Based on these csv files, we created an Entity Relationship Diagram (ERD) in the QuickDBD online app to outline the tables we intended to create to store the data in the database. The text that we input into to QuickDBD is in the schema.txt file. We also exported a png file of the ERD, which is named index_erd.png. We then exported the index_schema.sql file from Quick DBD, which was used to create our tables in PostgreSQL via pgAdmin 4. We imported the csv files that were created with the python script into the tables that we created with the index_schema.sql file to populate the Addresses and Categories tables.
+Instructor Mark Eidsaune and TA Jacob Johnson assisted with splitting the values within the JSON data for addresses so that separate pieces of the addresses (street address, city, state, zip etc.) would be contained within separate columns.  Other sources used are documented with citation above the related code block.
+
+We created a presentation to describe our project to our classmates which can be found in the file presentation.pdf.

@@ -1,0 +1,15 @@
+Addresses
+-
+Place_ID varchar(200) PK
+Property varchar(100)
+Address varchar(100)
+City varchar(50)
+State varchar(15)
+Zip varchar(10)
+Country varchar(30)
+
+Categories
+-
+Index int PK
+Place_ID varchar(200) FK >- Addresses.place_id
+Category varchar(100)
